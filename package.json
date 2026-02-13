@@ -1,0 +1,21 @@
+{
+  "name": "devops-handson",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint ."
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "eslint": "^8.0.0"
+  },
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "extends": "eslint:recommended"
+  }
+}
