@@ -1,0 +1,25 @@
+name: Node.js CI
+
+on: [push]  # どのブランチでも、pushされたら実行する
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest  # GitHubが用意したUbuntu仮想マシンを使う
+
+    steps:
+    - name: ソースコードのチェックアウト
+      uses: actions/checkout@v3
+
+    - name: Node.jsのセットアップ
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: ライブラリのインストール
+      run: npm install
+
+    - name: 構文チェック (Lint)
+      run: npm run lint
+
+    - name: 単体テスト (Test)
+      run: npm run test
